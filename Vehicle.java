@@ -13,12 +13,13 @@ public class Vehicle
 	private int passengers;
 	private double cargo;
 	private int tires; //probability of blowing a tire
-	private double odometer;
 	private double forwardProgress;
 	private double speed;
 	private double totalTime = 0;
-	
+	private Engine engine;
 	private static int[] gasStops;
+	private static finishLine = 2890;
+	
 	//HERE: is a static initializer
 	static {
 		gasStops = new int[10];
@@ -32,11 +33,7 @@ public class Vehicle
 	
 	public Vehicle()
 	{
-		this(0);
-	}
-	
-	public Vehicle(Engine E)
-	{
+		
 	}
 	
 	private distanceToNextStop()
@@ -51,7 +48,11 @@ public class Vehicle
 	
 	public double totalWeight()
 
-
+	public void drive()
+	{
+		tires += 1;
+	}
+	
 	public void drive(int miles) 
 	{
 		forwardProgress += miles;
@@ -59,6 +60,7 @@ public class Vehicle
 		fuel -= (miles/mpg + passengers + cargo);	
 		//TODO what if u run out of gas and lose
 		refuel(fuelCapacity);
+		tires += 1;
 	}
 	
 	public void refuel(int maxGas)
