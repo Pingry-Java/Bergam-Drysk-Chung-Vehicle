@@ -22,14 +22,14 @@ public class Vehicle
 	private double time; //time elapsed on journey
 	private Engine engine;
 	
-	
+	private double chances = .1;
 	//Static initializer
 	//creates the gas stops and their spacing
 	static
 	{
 		gasStops = new int[10];
-		for (int n = 0; n < 10; n++){
-		gasStops[n] = 200 * (n+1); 
+		for (int n = 0; n < 10; n++)
+			gasStops[n] = 200 * (n+1); 
 	}
 	
 	/**
@@ -55,13 +55,14 @@ public class Vehicle
 	 */
 	public void drive()
 	{
-		fuel -= engine.fuelRequired(this.distanceToNextStop(), this.totalWeight(), this.getSpeed());
-		milesToDestination -= this.distanceToNextStop();
-		forwardProgress += this.distanceToNextStop();
-		if ((engine.fuelRequired(speed, distanceToGas, cargo) == -1)
-    		this.isStranded() == false; 
+		double required = (engine.fuelRequired(distanceToNextStop(), cargo, speed));
+		if (required > 0)
+		{
+			fuel -= engine.fuelRequired(distanceToNextStop(), cargo, speed);
+			forwardProgress += this.distanceToNextStop();
+		}
 		if (chances > 1.0)
-				this.isStranded() == false;
+			required = -1;
 		chances += .1;
 	}
 
@@ -75,17 +76,17 @@ public class Vehicle
 	 */
 	public void drive(int miles) 
 	{
-		if ((engine.fuelRequired(speed, distanceToGas, cargo) == -1)
-    		this.isStranded() == false;
-		else 
+		double required = (engine.fuelRequired(speed, distanceToNextStop(), cargo));
+		if (required > 0)
 		{
      		forwardProgress += miles;
-			totalTime += speed * miles; 
-			fuel -= (miles/mpg + passengers + cargo);	
-			refuel(fuelCapacity);
+			time += speed * miles; 
+			fuel -= (miles + passengers + cargo);	
+			fillGas();
 			if (chances > 1.0)
-				this.isStranded() == false;
+				required = -1;
 			chances += .1;
+		}
 	}
 	
 	/**
@@ -121,7 +122,7 @@ public class Vehicle
 	 * @return boolean whether your vehicle has become stranded either with no money, or
 	 * without gas or tires in the middle of the road. Indicates a game-over condition
 	 */
-	public boolean isStranded()'
+	public boolean isStranded()
 	{
 		return (fuel <= 0 || money <= 0 || tires < 4);
 	}
