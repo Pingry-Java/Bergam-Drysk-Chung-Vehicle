@@ -1,5 +1,5 @@
 /**
- * this class contains all methods and fields necessary to simulate the engine of a vehicle
+ * This class contains all methods and fields necessary to simulate the engine of a vehicle
  * version - 1.0
  * authors - Miro, Tom, Ethan
  */
