@@ -255,66 +255,118 @@ public class Vehicle
 
 // MODIFIERS
 
+	/**
+	* This method sets fuel capacity as to a new value 
+	* @param fuelCapacity The fuel capacity of the vehicle
+	*/
 	public void setFuelCapacity(double fuelCapacity)
 	{
   		this.fuelCapacity = fuelCapacity; 
 	} 
 
+	/**
+	* This method sets number of seats to a new value 
+	* @param seats The number of seats in the vehicle
+	*/
 	public void setSeats(int seats)
 	{
 		this.seats = seats; 
 	} 
 	
+	/**
+	* This method sets number of wheels to a new value 
+	* @param wheels The number of wheels in the vehicle
+	*/
 	public void setWheels(int wheels)
 	{
   		this.wheels = wheels; 
 	} 
 	
+	/**
+	* This method sets the cargo capacity to a new value 
+	* @param cargoCapacity The amount of cargo the car can hold
+	*/
 	public void setCargoCapacity(double cargoCapacity)
 	{
 		this.cargoCapacity = cargoCapacity; 
 	} 
 	
+	/**
+	* This method sets the base weight to a new value 
+	* @param baseWeight The base weight of the vehicle
+	*/
 	public void setBaseWeight(double baseWeight)
 	{
 		this.baseWeight = baseWeight;
 	} 
  
+ 	/**
+	* This method sets money of the player to a new value 
+	* @param money The amount of money the player as
+	*/
 	public void setMoney(double money)
 	{
 		this.money = money; 
 	} 
-
+	
+	/**
+	* This method sets the fuel to a new value 
+	* @param fuel The amount of fuel in the vehicle
+	*/
 	public void setFuel(double fuel)
 	{
 		this.fuel = fuel; 
 	} 
-
+	
+	/**
+	* This method sets number of passnegers to a new value 
+	* @param passengers The number of passengers in the vehicle
+	*/
 	public void setPassengers(int passengers)
 	{
 		this.passengers = passengers; 
 	} 
 	
+	/**
+	* This method sets the amount of cargo to a new value 
+	* @param cargo The amount of cargo in the vehicle
+	*/
 	public void setCargo(double cargo)
 	{
 		this.cargo = cargo;
 	} 
  
+ 	/**
+	* This method sets the amount of tires to a new value 
+	* @param tires The amount of tires on the vehicle
+	*/
 	public void setTires(int tires)
 	{
 		this.tires = tires; 
 	} 
-
+	
+	/**
+	* This method sets the forward progress to a new value 
+	* @param forwardProgress How far the player has travelled in the game
+	*/
 	public void setForwardProgress(int forwardProgress)
 	{
 		this.forwardProgress = forwardProgress; 
 	} 
 
+	/**
+	* This method sets the speed to a new value 
+	* @param speed The speed of the vehicle
+	*/
 	public void setSpeed(double speed)
 	{
 		this.speed = speed;
 	} 
  	
+ 	/**
+	* This method sets the time to a new value 
+	* @param time The time that has elapsed so far on the journey
+	*/
  	public void setTime(double time)
 	{
 		this.time = time;
