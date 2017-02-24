@@ -49,19 +49,7 @@ public class Vehicle
 		
   	}
 	
-	private distanceToNextStop()
-	{
-		int counter = 0;
-		
-	}
-	
-	public getSpeed()
-	{
-	}
-	
-	public setSpeed
-	
-	public double totalWeight()
+
 
 	public void drive(int miles) 
 	{
@@ -74,15 +62,22 @@ public class Vehicle
 		refuel(fuelCapacity);
 	}
 	
-	public void refuel(int maxGas)
+	public void fillGas()
 	{
-		int needGas = maxGas - currentGas;
-		currentGas += needGas;
+		double needGas = fuelCapacity - fuel;
+		fuel += needGas;
 		money -= (2.75 * needGas); //dollar per gallon
 	}
 	
+	public double totalWeight()
+	{
+		return baseWeight + cargo + (passengers * 150); 
+	}
 	
-
+	public boolean arrived()
+	{
+		return (forwardProgress >= endpoint);
+	}
 
 //ACCESSORS
 
