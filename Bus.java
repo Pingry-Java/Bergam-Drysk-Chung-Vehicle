@@ -7,8 +7,10 @@ public class Bus extends Vehicle
 	private static double cargoCapacity = 100;
 	private static double baseWeight = 750;
  
- 
-	public Truck()
+ 	/**
+	 * default constructor for bus
+	 */
+	public Bus()
 	{
 		time = 0;
 		forwardProgress = 0;

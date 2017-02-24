@@ -7,7 +7,9 @@ public class Truck extends Vehicle
 	private static double cargoCapacity = 1000;
 	private static double baseWeight = 750;
  
- 
+	/**
+	 * default constructor for truck
+	 */
 	public Truck()
 	{
 		time = 0;

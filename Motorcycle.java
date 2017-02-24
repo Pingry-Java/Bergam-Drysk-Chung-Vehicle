@@ -7,7 +7,9 @@ public class Motorcycle extends Vehicle
 	private static double cargoCapacity = 100;
 	private static double baseWeight = 500;
  
- 
+ 	/**
+	 * default constructor for motorcycle
+	 */
 	public Motorcycle()
 	{
 		time = 0;
