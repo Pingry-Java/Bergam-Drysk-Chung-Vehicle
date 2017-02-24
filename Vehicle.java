@@ -137,67 +137,117 @@ public class Vehicle
 	}
 
 //ACCESSORS
-
+	/**
+	* This method returns fuel capacity
+	* @return Returns fuel capacity
+	*/
 	public double getFuelCapacity()
 	{
   		return fuelCapacity;  
 	} 
  	
+ 	/**
+	* This method returns the number of seats
+	* @return Returns seats
+	*/
 	public int getSeats()
  	{
   		return seats; 
  	} 
  	
+ 	/**
+	* This method returns the number of wheels
+	* @return Returns wheels
+	*/
  	public int getWheels()
 	{
 		return wheels; 
 	} 
- 	
+ 	/**
+	* This method returns the cargo capacity
+	* @return Returns cargo capacity
+	*/
 	public double getCargoCapacity()
  	{
  		return cargoCapacity; 
  	} 
-
+	
+	/**
+	* This method returns the Vehicle's base weight
+	* @return Returns base weight
+	*/
 	public double getBaseWeight()
 	{
 		return baseWeight; 
 	} 
 	
+	/**
+	* This method returns the player's money
+	* @return Returns money
+	*/
 	public double getMoney()
 	{
 		return money; 
 	} 
 
+	/**
+	* This method returns the fuel
+	* @return Returns fuel
+	*/
 	public double getFuel()
 	{
 		return fuel; 
 	} 
 	
+	/**
+	* This method returns the number of passengers
+	* @return Returns passengers
+	*/
 	public int getPassengers()
 	{
 		return passengers; 
 	} 
 	
+	/**
+	* This method returns the cargo
+	* @return Returns cargo
+	*/
 	public double getCargo()
 	{
 		return cargo; 
 	} 
-
+	
+	/**
+	* This method returns the number of spare tires
+	* @return Returns tires
+	*/
 	public int getTires()
 	{
 		return tires; 
 	} 
-
+	
+	/**
+	* This method returns the forward progress
+	* @return Returns forward progress
+	*/
 	public double getForwardProgress()
 	{
 		return forwardProgress; 
 	}
- 
+ 	
+ 	/**
+	* This method returns the speed
+	* @return Returns speed
+	*/
 	public double getSpeed()
 	{
 		return speed; 
 	} 
-
+	
+	/**
+	* This method returns the time 
+	* @return Returns time
+	*/
 	public double getTime()
 	{
 		return time; 
