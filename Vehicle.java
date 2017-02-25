@@ -4,7 +4,7 @@ public class Vehicle
 	private static double fuelCapacity;
 	private static int seats = 4;
 	private static int wheels = 4; //override in smaller classes
-	private static double cargoCapacity;
+	private static int cargoCapacity;
 	private static double baseWeight = 1000;
 	
 	private static int[] gasStops;
@@ -17,9 +17,9 @@ public class Vehicle
 	private double cargo;
 	private int tires; //this is number of SPARE tires
 	private double blowOut;
-	private double forwardProgress;
+	private double forwardProgress = 0.0;
 	private double speed;
-	private double time; //time elapsed on journey
+	private double time = 0.0; //time elapsed on journey
 	private Engine engine;
 	
 	private double chances = .1;
@@ -28,8 +28,9 @@ public class Vehicle
 	static
 	{
 		gasStops = new int[10];
-		for (int n = 0; n < 10; n++)
-			gasStops[n] = 200 * (n+1); 
+		gasStops[0] = 0;
+		for (int i = 1; i < gasStops.length; i++)
+			gasStops[i] = gasStops[i - 1] + 200;
 	}
 	
 	/**
@@ -100,6 +101,24 @@ public class Vehicle
 	}
 	
 	/**
+	 * method buys a tire
+	 */
+	public void buyTire()
+	 {
+	 	money -= 10;
+	 	tires++;
+	 }
+	
+	/** 
+	 * Method sells cargo
+	 */
+	public void sellCargo()
+	{
+		money += cargo * 10;
+		cargo = 0;
+	}
+	
+	/**
 	 * Method calculates the weight of the vehicle with its combined items/pasengers
 	 * @return the amount of weight, in pounds, of the vehicle plus cargo.
 	 */
@@ -167,7 +186,7 @@ public class Vehicle
 	* This method returns the cargo capacity
 	* @return Returns cargo capacity
 	*/
-	public double getCargoCapacity()
+	public int getCargoCapacity()
  	{
  		return cargoCapacity; 
  	} 
@@ -286,7 +305,7 @@ public class Vehicle
 	* This method sets the cargo capacity to a new value 
 	* @param cargoCapacity The amount of cargo the car can hold
 	*/
-	public void setCargoCapacity(double cargoCapacity)
+	public void setCargoCapacity(int cargoCapacity)
 	{
 		this.cargoCapacity = cargoCapacity; 
 	} 

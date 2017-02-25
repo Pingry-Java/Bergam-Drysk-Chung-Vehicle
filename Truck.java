@@ -4,23 +4,23 @@ public class Truck extends Vehicle
 	private static double fuelCapacity = 100;
 	private static int seats = 2;
 	private static int wheels = 18; 
-	private static double cargoCapacity = 1000;
+	private static int cargoCapacity = 1000;
 	private static double baseWeight = 750;
+	private static int speed = 50;
  
 	/**
-	 * default constructor for truck
+	 * constructor for car
+	 *@param passengers
 	 */
-	public Truck()
+	public Truck(int passengers)
 	{
-		time = 0;
-		forwardProgress = 0;
-		money = 1000; 
-		passengers = 2;  
-		cargo = 0;
-		fuel = fuelCapacity; 
-		tires = 4; //4 spare 
-		speed = 60;
-		engine = new Engine(8); 
+		super.setPassengers(passengers);
+		super.setTires(wheels);
+		super.setFuelCapacity(fuelCapacity);
+		super.setCargoCapacity(cargoCapacity);
+		super.setSeats(seats);
+		super.setSpeed(speed);
+		super.setBaseWeight(baseWeight);
 	}
 	
 }
