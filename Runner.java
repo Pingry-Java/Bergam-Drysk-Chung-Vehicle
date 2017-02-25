@@ -85,5 +85,9 @@ public class Runner
 				}
 			}
 		}
+		if(vehicle.arrived())
+			System.out.println("YOU WIN");
+		else
+			System.out.println("Fail");
 	}
 }
