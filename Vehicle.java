@@ -44,7 +44,7 @@ public class Vehicle
 		cargoCapacity = 500;  //lb of cargo
 		cargo = 100; //lbs of cargo
 		passengers = 2; //People 
-		money = 1000;
+		money = 10000;
 		tires = 2;  //two spare tires
 		forwardProgress = 0; //Miles 
 		speed = 60; //Mph 
@@ -77,17 +77,13 @@ public class Vehicle
 	 */
 	public void drive(int miles) 
 	{
-		double required = (engine.fuelRequired(speed, distanceToNextStop(), cargo));
-		if (required > 0)
-		{
-     		forwardProgress += miles;
+
+     		forwardProgress += (double) miles;
 			time += speed * miles; 
 			fuel -= (miles + passengers + cargo);	
 			fillGas();
-			if (chances > 1.0)
-				required = -1;
 			chances += .1;
-		}
+
 	}
 	
 	/**

@@ -36,7 +36,7 @@ public class Runner
 		
 		System.out.println("From New Jersey, you will try and drive all the way to San Francisco");
 		System.out.println("You have to spend money to ensure that your gas and tires are working.");
-		System.out.println("You start out with $900. Gas costs 2.75 per gallon. And tires are 10 dollars. You will have to rely on your math skills to figure out the money you have left.");
+		System.out.println("You start out with $900. Gas costs 2.75 per gallon. And tires are 10 dollars.");
 		vehicle.setMoney(900);
 		vehicle.fillGas();
 	
@@ -59,6 +59,10 @@ public class Runner
 				keyboard.nextLine(); 
 				vehicle.drive(distance); 
 			}
+			
+			System.out.println("You have " + vehicle.getMoney() + " dollars left.");
+			System.out.println("You have " + vehicle.getFuel() + " gallons of fuel out of a maximum of " + vehicle.getFuelCapacity());
+			System.out.println("You have travelled a total of " + vehicle.getForwardProgress() + " out of your 2890 mile journey.");
 			
 			System.out.println("Please type 'y' if you would like to buy fill your vehicle's gas tank or 'n' if you don't want to");
 			if (keyboard.nextLine().equals("y"))
@@ -84,8 +88,7 @@ public class Runner
 						vehicle.buyTire();
 				}
 			}
-			System.out.println("You have " + vehicle.getFuel() + " gallons of fuel out of a maximum of " + vehicle.getFuelCapacity());
-			System.out.println("You have travelled a total of " + vehicle.getForwardProgress() + " out of your 2890 mile journey.");
+			
 		}
 		if(vehicle.arrived())
 			System.out.println("YOU WIN");
